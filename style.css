@@ -1,0 +1,72 @@
+.card, .btn, .form-control { 
+  border-radius: 0; 
+}
+
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+#pageIntro{
+   background-image: url("hotel1.jpg");
+   background-repeat: no-repeat; 
+   background-size: cover; 
+   background-position: center center;
+   background-attachment: fixed;
+}
+
+.btn{
+  color: antiquewhite;
+  border:  2px solid white;
+  font: bold;
+}
+
+.btn:hover{
+
+  background-color: white;
+  border:  2px solid white;
+
+  box-shadow: 0ch;
+  color: grey;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 100vh;
+  }
+}
+body{
+  color: whitesmoke;
+}
+
+.top-nav-collapse {
+  background-color: #78909c !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #78909c !important;
+  }
+}
+
+h1 {
+  letter-spacing: 8px;
+}
+
+h5 {
+  letter-spacing: 3px;
+}
+
+.hr-light {
+  border-top: 3px solid #fff;
+  width: 80px;
+}
