@@ -1,8 +1,5 @@
 let hoteles = [];
 
-$('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-  })
 
 function crearHotel() {
 
@@ -24,12 +21,28 @@ function crearHotel() {
         document.getElementById("answer").innerHTML = "Hay " + hoteles.length + " hoteles guardados";
     }
 
-    $('#myModal').modal('toggle');
+    cargarhoteles();
+
+    $('#addModal').modal('toggle');
+
 }
+
+
+//Función que añade los nuevos hoteles en el select.
+
+function cargarhoteles(){
+
+    var sel = document.getElementById("selectHoteles"); 
+    var opt = document.createElement('option');
+    opt.innerHTML = hoteles[hoteles.length-1].nombre;
+    opt.value = hoteles[hoteles.length];
+    sel.appendChild(opt);
+    
+}
+
 
 function borrarHotel() {
 
-    let name = prompt("¿Qué hotel quieres borrar?");
 
     for (i = hoteles.length - 1; i >= 0; i--) {
         let hotelPosition = hoteles[i];
@@ -46,11 +59,24 @@ function borrarHotel() {
     }else {
         document.getElementById("answer").innerHTML = "Hay " + hoteles.length + " hoteles guardados";
     }
+
+    deleteSelect();
+
+    $('#deleteModal').modal('hide');
 }
+
+
+
+function deleteSelect() {
+    var list = document.getElementById("selectHoteles");
+    list.removeChild(list.childNodes[hoteles.length]);
+  }
+
+
 
 function verHotel() {
 
-    let name = prompt("¿Qué hotel quieres borrar?");
+  
     let servicio = 0;
     let flag = false;
 
@@ -67,13 +93,16 @@ function verHotel() {
             document.getElementById("showHotel").innerHTML = show;
 
             flag = true;
-        }
+        }            
     }
 
     if (flag == false) {
 
         document.getElementById("showHotel").innerHTML = "Lo siento, no hemos encontrado tu hotel";
     }
+
+    $('#addModal').modal('toggle');
+
 }
 
 function modificarHotel() {
@@ -118,6 +147,7 @@ function modificarHotel() {
     
    
     
+    $('#addModal').modal('toggle');
 
 
 

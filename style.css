@@ -12,6 +12,7 @@ header,
    background-size: cover; 
    background-position: center center;
    background-attachment: fixed;
+   
 }
 
 .btn{
@@ -25,7 +26,7 @@ header,
   background-color: white;
   border:  2px solid white;
 
-  box-shadow: 0ch;
+  box-shadow: 2ch;
   color: grey;
 }
 /* Modal */
@@ -45,10 +46,6 @@ header,
 }
 body{
   color: whitesmoke;
-}
-
-.top-nav-collapse {
-  background-color: #78909c !important;
 }
 
 .navbar:not(.top-nav-collapse) {

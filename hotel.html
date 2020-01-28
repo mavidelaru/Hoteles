@@ -8,12 +8,12 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
   <title>Guarda tus hoteles</title>
-
 </head>
 
 <body>
+<!---- Header full screen ---->
   <div class="view" id="pageIntro">
-    <div class="mask rgba-black-light align-items-center">
+    <div class="mask rgba-black-light align-items-center" id="black">
       <div class="container pt-5">
         <div class="mt-5 col-md-12 mb-4 white-text text-center">
           <h1 class="mt-5 white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown"
@@ -23,61 +23,125 @@
               favoritos</strong></h5>
           <div class="text-center pt-4">
 
-            <!--Modal-->
-            <button type="button" class="btn btn-outline-secondary"  data-toggle="modal" data-target="#myModal"> Añadir Hotel </button>
-            
-            <div class="modal" id="myModal">
+<!------ AÑADIR HOTEL ------>
+
+            <button type="button" class="btn btn-outline-secondary"  data-toggle="modal" data-target="#addModal"> Añadir Hotel </button>
+          
+            <div class="modal" id="addModal">
               <div class="modal-dialog">
                 <div class="modal-content">
             
-                  <!-- Modal Header -->
+                  <!-- ModalHeader -->
                   <div class="modal-header">
                     <h4 class="modal-title">Añadir Hotel</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
             
-                  <!-- Modal body -->
+                  <!-- ModalBody -->
                   <div class="modal-body">
 
                     <div class="row">
                       <label class="col-4" for="nameh">Nombre del hotel</label> 
                       <input class="col-6" type="text" id="nameh">
                     </div>
+
                     <div class="row">
-                      <label class="col-4" for="nhab">"Número de habitaciones</label> 
-                      <input type="number" id="nhab">
+                      <label class="col-4" for="nhab">Nº habitaciones</label> 
+                      <input class="col-6" type="number" id="nhab">
                     </div>
+
                     <div class="row">
-                      <label class="col-4" for="nplan">Número de plantas</label> 
-                      <input type="number" id="nplan">
+                      <label class="col-4" for="nplan">Nº de plantas</label> 
+                      <input class="col-6" type="number" id="nplan">
                     </div>
+
                     <div class="row">
-                      <label class="col-4" for="shot">Superficie del hotel</label> 
-                      <input type="number" id="shot">
+                      <label class="col-4" for="shot">Superficie total</label> 
+                      <input class="col-6" type="number" id="shot">
                     </div>
                   </div>
             
-                  <!-- Modal footer -->
+                  <!-- Modalfooter -->
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger" onclick="crearHotel()" >Aceptar</button>
+                    <button type="button" class="btn btn-danger" id="botonito" onclick="crearHotel()" >Aceptar</button>
                   </div>
-            
                 </div>
               </div>
             </div>
-          
-            
         
+<!---- BORRAR HOTEL ---->
+
+            <button class="btn btn-outline-secondary" data-toggle="modal" data-target="#deleteModal" > Borra Hotel </button>
+
+            <div class="modal" id="deleteModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Borrar Hotel</h4>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <div class="col-9">
+                      <select name="selectHoteles" class="form-control " id="selectHoteles">
+                        <option  value=""></option>
+                      </select>
+                    </div>
+                  </div>
+                  
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" onclick="borrarHotel()" >Aceptar</button>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
 
 
-
-            <button class="btn btn-outline-secondary" onclick="borrarHotel()"> Borra Hotel </button>
-
+<!---- VER HOTEL ---->
             <button class="btn btn-outline-secondary" onclick="verHotel()"> Ver Hotel </button>
 
+            <div class="modal" id="verModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Borrar Hotel</h4>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <div class="col-9">
+                      <select name="selectHoteles" class="form-control selectHoteles">
+                        <option  value=""></option>
+                      </select>
+                    </div>
+                  </div>
+                    
+                  
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" onclick="verHotel()" >Aceptar</button>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+<!---- MODIFICAR HOTEL ---->
             <button class="btn btn-outline-secondary" onclick="modificarHotel()"> Modificar Hotel </button>
 
+<!---- Div respuestas ---->
             <h4>
               <div id="answer" class="mt-5"> ¡Crea tu primer hotel!</div>
             </h4>
@@ -85,6 +149,7 @@
           </div>
         </div>
       </div>
+    </div>
 
     </div>
 
