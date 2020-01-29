@@ -27,7 +27,7 @@
 
             <button type="button" class="btn btn-outline-secondary"  data-toggle="modal" data-target="#addModal"> Añadir Hotel </button>
           
-            <div class="modal" id="addModal">
+            <div class="modal fade" id="addModal">
               <div class="modal-dialog">
                 <div class="modal-content">
             
@@ -38,7 +38,7 @@
             
                   <!-- ModalBody -->
                   <div class="modal-body">
-
+                    
                     <div class="row mb-2">
                       <label class="col-4" for="nameh">Nombre del hotel</label> 
                       <input class="col-6 form-control" type="text" id="nameh">
@@ -73,7 +73,7 @@
 
             <button class="btn btn-outline-secondary" data-toggle="modal" data-target="#deleteModal" > Borra Hotel </button>
 
-            <div class="modal" id="deleteModal">
+            <div class="modal fade" id="deleteModal">
               <div class="modal-dialog">
                 <div class="modal-content">
 
@@ -107,7 +107,7 @@
 <!---- VER HOTEL ---->
             <button class="btn btn-outline-secondary" data-toggle="modal" data-target="#seeModal"> Ver Hotel </button>
 
-            <div class="modal" id="seeModal">
+            <div class="modal fade" id="seeModal">
               <div class="modal-dialog">
                 <div class="modal-content">
 
@@ -119,17 +119,17 @@
                   <!-- Modal body -->
                   <div class="modal-body">
                     <div class="col-12">
-                      <select name="selectHoteles" class="selectHoteles form-control">
-                        <option  value=""></option>
+                      <select name="selectHoteles" class="selectHoteles form-control" onchange="verHotel(this)" >
+                        <option value="">...</option>
                       </select>
                     </div>
+                    <div id="showHotel" class="mt-5"></div>
                   </div>
-                    
                   
                   <!-- Modal footer -->
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger" onclick="verHotel()" >Aceptar</button>
+                    <button type="button" class="btn btn-danger" onclick="close()">Aceptar</button>
                   </div>
 
                 </div>
@@ -143,7 +143,7 @@
             <h4>
               <div id="answer" class="mt-5"> ¡Crea tu primer hotel!</div>
             </h4>
-            <div id="showHotel" class="mt-5"></div>
+            
           </div>
         </div>
       </div>
