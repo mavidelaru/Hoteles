@@ -32,12 +32,17 @@ function crearHotel() {
 
 function cargarhoteles(){
 
-    var sel = document.getElementById("selectHoteles"); 
-    var opt = document.createElement('option');
-    opt.innerHTML = hoteles[hoteles.length-1].nombre;
-    opt.value = hoteles[hoteles.length];
-    sel.appendChild(opt);
-    
+    var sel = document.getElementsByClassName("selectHoteles"); 
+    var opt = [document.createElement('option'), document.createElement('option') ];
+
+    opt[0].innerHTML = hoteles[hoteles.length-1].nombre;
+    opt[1].innerHTML = hoteles[hoteles.length-1].nombre;
+
+    opt[0].value = hoteles[hoteles.length];
+    opt[1].value = hoteles[hoteles.length];
+
+    sel[0].appendChild(opt[0]);
+    sel[1].appendChild(opt[1]);
 }
 
 
