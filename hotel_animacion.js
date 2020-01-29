@@ -57,10 +57,12 @@ function selectEliminarHoteles(selectedHotel){
     
     for(i=0; i<hoteles.length; i++){
 
-        if(selectedHotel == sel[i].options[sel[i].selectedIndex].text){
+        if(selectedHotel == sel[0].options[sel[i].selectedIndex].text && selectedHotel == sel[1].options[sel[i].selectedIndex].text){
             sel[0].options[sel[0].selectedIndex].remove();
-            sel[1].options[sel[0].selectedIndex].remove();
-        }
+            sel[1].options[sel[1].selectedIndex].remove();
+            
+        } 
+        
     }
 }
 
